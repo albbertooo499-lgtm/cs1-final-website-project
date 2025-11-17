@@ -12,5 +12,22 @@
  }
 
  .text1 {
-    font-size: medium;
+    font-size: 100px;
+ }
+
+ body {
+   background-color: rgb(234, 236, 204);
+ }
+
+ .beto {
+   margin-right: 500px;
+   
+ }
+
+ .my-container {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   alt="beto"
  }
