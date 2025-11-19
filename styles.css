@@ -7,10 +7,6 @@
     margin-right: 100px;
  }
 
- .imajen {
-    margin-right: 400px;
- }
-
  .text1 {
     font-size: 100px;
  }
@@ -20,7 +16,7 @@
  }
 
  .beto {
-   margin-right: 500px;
+   margin-right: 34px;
    
  }
 
@@ -31,7 +27,20 @@
  }
 
  .betopollo {
+   text-align: center;
   display: flex;
   position: center;
 
+ }
+
+ h1, p {
+   text-align: center;
+ }
+
+ .titulo {
+   text-align: center;
+ }
+
+ .my-container {
+   margin: center;
  }
