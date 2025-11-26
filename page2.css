@@ -19,6 +19,18 @@ body {
  .mary {
    width: 400px;
    position: relative;
-   posit
+
+ }
+
+ .text2 {
+ 
+display: flex;
+  text-decoration: none;
+  font-size: 200px;
+  background-color: brown;
+  border-radius: 20px;
+  position: absolute;
+  margin-left: 370px;
+  color: black;
 
  }

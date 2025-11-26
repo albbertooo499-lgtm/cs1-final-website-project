@@ -45,3 +45,15 @@
  .my-container {
    margin: center;
  }
+
+ .text, p {
+  display: flex;
+  text-decoration: none;
+  font-size: 200px;
+  background-color: brown;
+  border-radius: 20px;
+  position: absolute;
+  margin-left: 500px;
+  color: black;
+  margin-top: 200px;
+ }
