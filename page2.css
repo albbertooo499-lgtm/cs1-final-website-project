@@ -19,6 +19,7 @@ body {
  .mary {
    width: 400px;
    position: relative;
+   margin-left: 300px;
 
  }
 
@@ -26,11 +27,21 @@ body {
  
 display: flex;
   text-decoration: none;
-  font-size: 200px;
+  font-size: 100px;
   background-color: brown;
   border-radius: 20px;
   position: absolute;
-  margin-left: 370px;
+  margin-left: 635px;
   color: black;
+  margin-top: 200px;
 
+ }
+
+ .tercera {
+  background-color: brown;
+  text-decoration: none;
+  color: black;
+  border-radius: 20px;
+  margin-left: 700px;
+  font-size: 100px;
  }

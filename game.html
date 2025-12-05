@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Excesivamente Simple HTML</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 50%;
+            margin: auto;
+        }
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .options a {
+            display: block;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f0f0f0;
+            text-decoration: none;
+            color: black;
+            border-radius: 5px;
+        }
+        .options a:hover {
+            background-color: #ddd;
+        }
+        /* Esta clase solo simula una respuesta correcta sin JS */
+        .correct-answer {
+            background-color: #aaffaa !important; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="question">
+            ¿Cuál es el color del cielo en un día despejado?
+        </div>
+        <div class="options">
+            <!-- Estas "respuestas" son solo enlaces de anclaje ficticios -->
+            <a href="#incorrecto1">Rojo</a>
+            <a href="#incorrecto2">Verde</a>
+            <a href="#correcto" class="correct-answer">Azul (¡Respuesta correcta!)</a>
+            <a href="#incorrecto3">Amarillo</a>
+        </div>
+        <div id="correcto" style="display: none; margin-top: 20px; color: green;">
+            ¡Simulación de victoria! Esto aparece si haces clic en el enlace correcto.
+        </div>
+    </div>
+
+    <script>
+        // Nota: El uso de 'style="display: none;"' para ocultar y
+        // el uso de enlaces de anclaje como '#correcto' solo funcionan
+        // si la persona hace clic en el enlace. El navegador navega a ese ID.
+        // Pero no hay NINGUNA lógica de juego real.
+    </script>
+
+</body>
+</html>
