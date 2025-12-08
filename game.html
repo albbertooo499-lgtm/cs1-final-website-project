@@ -3,65 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego Excesivamente Simple HTML</title>
+    <title>Adivina el Número</title>
     <style>
         body {
-            font-family: sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
         }
-        .container {
-            border: 1px solid #ccc;
-            padding: 20px;
-            width: 50%;
-            margin: auto;
-        }
-        .question {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-        .options a {
-            display: block;
+        input[type="number"] {
             padding: 10px;
-            margin: 10px 0;
-            background-color: #f0f0f0;
-            text-decoration: none;
-            color: black;
-            border-radius: 5px;
+            font-size: 16px;
+            width: 60px;
         }
-        .options a:hover {
-            background-color: #ddd;
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
         }
-        /* Esta clase solo simula una respuesta correcta sin JS */
-        .correct-answer {
-            background-color: #aaffaa !important; 
+        #mensaje {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <div class="question">
-            ¿Cuál es el color del cielo en un día despejado?
-        </div>
-        <div class="options">
-            <!-- Estas "respuestas" son solo enlaces de anclaje ficticios -->
-            <a href="#incorrecto1">Rojo</a>
-            <a href="#incorrecto2">Verde</a>
-            <a href="#correcto" class="correct-answer">Azul (¡Respuesta correcta!)</a>
-            <a href="#incorrecto3">Amarillo</a>
-        </div>
-        <div id="correcto" style="display: none; margin-top: 20px; color: green;">
-            ¡Simulación de victoria! Esto aparece si haces clic en el enlace correcto.
-        </div>
-    </div>
+    <h1>guess a number (1-10)</h1>
+    <p>put a number at the 1 al 10 and press "guess".</p>
+    <input type="number" id="suposicionUsuario" min="1" max="10">
+    <button onclick="comprobarSuposicion()">guess</button>
+    <div id="mensaje"></div>
 
     <script>
-        // Nota: El uso de 'style="display: none;"' para ocultar y
-        // el uso de enlaces de anclaje como '#correcto' solo funcionan
-        // si la persona hace clic en el enlace. El navegador navega a ese ID.
-        // Pero no hay NINGUNA lógica de juego real.
-    </script>
+        // --- Lógica del Juego (JavaScript) ---
 
+        // 1. Genera un número secreto aleatorio del 1 al 10
+        const numeroSecreto = Math.floor(Math.random() * 10) + 1;
+        
+        // 2. Función que se ejecuta cuando el usuario pulsa el botón
+        function comprobarSuposicion() {
+            // Obtiene el valor del input del usuario
+            const suposicion = document.getElementById('suposicionUsuario').value;
+            const mensajeDiv = document.getElementById('mensaje');
+
+            // Comprueba si el input está vacío
+            if (suposicion === "") {
+                mensajeDiv.textContent = "please, put a number.";
+                mensajeDiv.style.color = "orange";
+                return;
+            }
+
+            // 3. Compara el número del usuario con el secreto
+            if (parseInt(suposicion) === numeroSecreto) {
+                mensajeDiv.textContent = "Correct! You've won!!";
+                mensajeDiv.style.color = "green";
+                // Desactiva el input y el botón al ganar
+                document.getElementById('suposicionUsuario').disabled = true;
+                document.querySelector('button').disabled = true;
+            } else {
+                mensajeDiv.textContent = `Incorrect. The secret number was ??. try again.`;
+                mensajeDiv.style.color = "red";
+                // Genera un nuevo número secreto para la siguiente ronda (puedes omitir esto si quieres que adivine el mismo)
+                // numeroSecreto = Math.floor(Math.random() * 10) + 1; 
+            }
+        }
+    </script>
 </body>
 </html>
