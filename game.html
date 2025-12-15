@@ -33,39 +33,38 @@
     <input type="number" id="suposicionUsuario" min="1" max="10">
     <button onclick="comprobarSuposicion()">guess</button>
     <div id="mensaje"></div>
+    <a href="index.html">home</a>
 
     <script>
-        // --- Lógica del Juego (JavaScript) ---
 
         // 1. Genera un número secreto aleatorio del 1 al 10
         const numeroSecreto = Math.floor(Math.random() * 10) + 1;
         
-        // 2. Función que se ejecuta cuando el usuario pulsa el botón
+    
         function comprobarSuposicion() {
-            // Obtiene el valor del input del usuario
+        
             const suposicion = document.getElementById('suposicionUsuario').value;
             const mensajeDiv = document.getElementById('mensaje');
 
-            // Comprueba si el input está vacío
+        
             if (suposicion === "") {
                 mensajeDiv.textContent = "please, put a number.";
                 mensajeDiv.style.color = "orange";
                 return;
             }
 
-            // 3. Compara el número del usuario con el secreto
             if (parseInt(suposicion) === numeroSecreto) {
                 mensajeDiv.textContent = "Correct! You've won!!";
                 mensajeDiv.style.color = "green";
-                // Desactiva el input y el botón al ganar
+              
                 document.getElementById('suposicionUsuario').disabled = true;
                 document.querySelector('button').disabled = true;
             } else {
                 mensajeDiv.textContent = `Incorrect. The secret number was ??. try again.`;
                 mensajeDiv.style.color = "red";
-                // Genera un nuevo número secreto para la siguiente ronda (puedes omitir esto si quieres que adivine el mismo)
-                // numeroSecreto = Math.floor(Math.random() * 10) + 1; 
-            }
+    
+          }
+        
         }
     </script>
 </body>
